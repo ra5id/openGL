@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -Wextra -O2
 
-LIBS = -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LIBS = -lGLEW -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 
 TARGET = bin/main
 SRC = src/application.cpp

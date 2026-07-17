@@ -1,4 +1,5 @@
 #include <iostream>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 #define WINDOW_HEIGHT 720.0f
@@ -13,6 +14,7 @@ int main(void)
 		return -1;
 	}
 
+
 	window = glfwCreateWindow(WINDOW_WIDTH,WINDOW_HEIGHT,"hello world",NULL,NULL);
 	if(!window)
 	{
@@ -20,9 +22,12 @@ int main(void)
 		return -1;
 	}
 
-
 	glfwMakeContextCurrent(window);
 
+	if(glewInit() != GLEW_OK)
+		std::cout << "Error!<-will not delete this and will keep ignoring cuz you don matter anyway." << std::endl;
+	
+	std::cout << glGetString(GL_VERSION) << std::endl;
 	while(!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
